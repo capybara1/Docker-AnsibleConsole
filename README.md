@@ -1,2 +1,5 @@
-# Docker-AnsibleConsole
-Sources for a Docker image that defines a RancherOS console capable to work with Ansible
+# Ansible-Console
+
+## Motivation
+
+A RancherOS console that is capable to work with Ansible 
