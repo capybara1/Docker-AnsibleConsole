@@ -1,9 +1,10 @@
 FROM rancher/os-alpineconsole:v1.5.2-rc1
+ARG VERSION
 ARG VCS_REF
 ARG BUILD_DATE
 LABEL org.label-schema.schema-version="1.0" \
       org.label-schema.name="ansible-console" \
-      org.label-schema.version="1.0.$VCS_REF" \
+      org.label-schema.version="$VERSION" \
       org.label-schema.license="MIT" \
       org.label-schema.maintainer="https://github.com/capybara1/" \
       org.label-schema.url="https://github.com/capybara1/Docker-AnsibleConsole" \
