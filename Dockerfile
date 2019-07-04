@@ -14,4 +14,5 @@ LABEL org.label-schema.schema-version="1.0" \
       org.label-schema.dockerfile="/Dockerfile"
 RUN apk --no-cache add python py-pip \
  && pip install pyyaml
+COPY Z99-customizations.sh /etc/profile.d/
 ENTRYPOINT ["/usr/bin/ros", "entrypoint"]
