@@ -13,6 +13,6 @@ LABEL org.label-schema.schema-version="1.0" \
       org.label-schema.build-date="$BUILD_DATE" \
       org.label-schema.dockerfile="/Dockerfile"
 RUN apk --no-cache add attr python py-pip \
- && pip install pyyaml jmespath
+ && pip install pyyaml pymysql jmespath pexpect
 COPY Z99-customizations.sh /etc/profile.d/
 ENTRYPOINT ["/usr/bin/ros", "entrypoint"]
