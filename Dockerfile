@@ -12,6 +12,7 @@ LABEL org.label-schema.schema-version="1.0" \
       org.label-schema.vcs-ref="$VCS_REF" \
       org.label-schema.build-date="$BUILD_DATE" \
       org.label-schema.dockerfile="/Dockerfile"
+COPY motd /etc/motd
 RUN apk add --no-cache attr python3 py3-pip  \
  && apk add --no-cache --virtual .build-deps gcc make musl-dev python3-dev libffi-dev openssl-dev py3-paramiko py3-cffi \
  && pip3 install pyyaml pymysql jmespath pexpect docker-compose \
