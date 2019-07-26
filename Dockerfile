@@ -13,9 +13,10 @@ LABEL org.label-schema.schema-version="1.0" \
       org.label-schema.build-date="$BUILD_DATE" \
       org.label-schema.dockerfile="/Dockerfile"
 COPY motd /etc/motd
-RUN apk add --no-cache attr python3 py3-pip  \
+RUN apk add --no-cache attr python3 py3-pip \
  && apk add --no-cache --virtual .build-deps gcc make musl-dev python3-dev libffi-dev openssl-dev py3-paramiko py3-cffi \
- && pip3 install "six<2" "idna<2.8" "PyYAML<4.3" pymysql jmespath pexpect docker-compose \
- && apk del .build-deps
+ && pip3 install docker-compose \
+ && apk del .build-deps \
+ && pip3 install "six<2" "idna<2.8" "PyYAML<4.3" pymysql jmespath pexpect
 COPY Z99-customizations.sh /etc/profile.d/
 ENTRYPOINT ["/usr/bin/ros", "entrypoint"]
