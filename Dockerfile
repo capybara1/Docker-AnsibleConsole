@@ -15,7 +15,7 @@ LABEL org.label-schema.schema-version="1.0" \
 COPY motd /etc/motd
 RUN apk add --no-cache attr python3 py3-pip  \
  && apk add --no-cache --virtual .build-deps gcc make musl-dev python3-dev libffi-dev openssl-dev py3-paramiko py3-cffi \
- && pip3 install pyyaml pymysql jmespath pexpect docker-compose \
+ && pip3 install "six<2" "idna<2.8" "PyYAML<4.3" pymysql jmespath pexpect docker-compose \
  && apk del .build-deps
 COPY Z99-customizations.sh /etc/profile.d/
 ENTRYPOINT ["/usr/bin/ros", "entrypoint"]
